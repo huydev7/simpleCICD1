@@ -5,10 +5,10 @@ pipeline {
         stage('Install Node.js') {
             steps {
                 script {
-                    // Cài đặt Node.js và npm
+                    // Cài đặt Node.js và npm (không sử dụng sudo)
                     sh '''
-                        curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-                        sudo apt-get install -y nodejs
+                        curl -sL https://deb.nodesource.com/setup_16.x | bash -
+                        apt-get install -y nodejs
                     '''
                 }
             }
